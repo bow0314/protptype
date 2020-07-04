@@ -1,0 +1,2747 @@
+body{
+	font-family:Arial, Helvetica, "Microsoft JhengHei", sans-serif;
+}
+/*--回活動首頁的按鈕--*/
+#BACK_ACTION{
+	width: 90px;
+	height: 90px;	
+	background-size: 100%;	
+	
+	position: fixed;
+	z-index: 30;
+	top: 8px;
+	bottom: auto;
+	left: auto;
+	right: 8px;		
+}
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+}
+
+#number{
+    position: absolute;
+    top: 368px;
+    right: 38px;
+    z-index:20;
+}
+#number span{
+    font-family:Impact,Arial,Helvetica;
+    font-size:48px;
+    color: #fff;
+    margin-right: 4px;
+    position: relative;
+    width: 36px;
+    height: 60px;
+    display: block;
+    float: left;
+    text-align: center;
+}
+#number span:nth-child(3n+1){
+    margin-right: 14px;
+}
+
+#HEADER {
+    float: none;
+    height: 600px;
+    margin: 0px auto;
+    clear: none;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: block;
+    background-color: rgb(255, 228, 46);
+}
+
+#image1 {
+	float: left;
+	width: 185px;
+	max-width: 100%;
+	height: auto;
+	clear: none;
+	color: rgb(0, 0, 0);
+	position: absolute;
+	top: 79px;
+	left: auto;
+	right: 347px;
+}
+
+h1{
+    text-indent: -9999px;
+}
+
+#image {
+	float: left;
+	width: 320px;
+	max-width: 100%;
+	height: auto;
+	clear: none;
+	color: rgb(0, 0, 0);
+	position: absolute;
+	top: 79px;
+	left: auto;
+	right: 32px;
+}
+
+#text {
+	float: left;
+	font-size: 18px;
+	width: auto;
+	height: auto;
+	text-align: center;
+	font-weight: 600;
+	line-height: 36px;
+	clear: none;
+	min-height: 0px;
+	position: absolute;
+	top: 255px;
+	left: auto;
+	right: 25px;
+}
+
+#text1 {
+	float: left;
+	font-size: 30px;
+	width: auto;
+	height: auto;
+	text-align: center;
+	font-weight: 600;
+	line-height: 36px;
+	clear: none;
+	min-height: 0px;
+	position: absolute;
+	top: 303px;
+	left: 438px;
+	right: 20px;
+}
+
+#BAR {
+	float: left;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	clear: none;
+	color: rgb(0, 0, 0);
+	position: absolute;
+	top: 346px;
+	left: auto;
+	right: 32px;
+}
+
+#image2 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+    display: block;
+}
+
+#image3 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+    display: block;
+}
+
+#BUTTON {
+	display: none;
+	float: left;
+	height: auto;
+	clear: none;
+	width: 500px;
+	padding-top: 0px;
+	position: absolute;
+	top: 468px;
+	left: auto;
+	bottom: auto;
+	right: 25px;
+}
+
+/*--桌機：積點活動Banner CSS--*/
+#AD-BANNER{
+    display: block;
+    width: 550px;
+    height: 151px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url(../img/ad-banner.png);
+	background-position: none;
+    position: absolute;
+    top: auto;
+    left: auto;
+    right: 10px;
+    bottom: -1px;
+}
+
+/*--桌機：積點活動掃描QR Code的圖--*/
+#AD-QRCODE{
+	display: block;
+	float: left;
+	height: auto;
+	clear: none;
+	width: 111px;
+	padding: 0px;
+	position: absolute;
+	top: auto;
+	left: auto;
+	bottom: 22px;
+	right: 405px;
+	z-index: 30;
+}
+
+#BOX_01 {
+    float: none;
+    height: 600px;
+    clear: none;
+    width: 960px;
+    margin-left: auto;
+    margin-top: 0px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(255, 228, 46);
+    background-image:url("../img/bg_01.png");
+    background-attachment: scroll;
+    -webkit-background-size: 1191px 600px;
+    background-size: 1191px 600px;
+    z-index: 0;
+    margin-right: auto;
+    display: block;
+    background-position: 50% 0%;
+    background-repeat: no-repeat no-repeat;
+}
+
+/*--PC版：即時對獎無APP LOGO：開始--*/
+#BOX_02_PC {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+    background-color: rgb(255, 66, 66);
+    margin-right: auto;
+    
+}
+
+#image4_PC {
+    float: left;
+    width: 115px;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0px;
+    position: absolute;
+    top: 158px;
+    bottom: auto;
+    left: 48px;
+    right: auto;
+}
+
+#BOX_02_PIC_PC {
+    float: right;
+    height: 490px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 418px;
+    margin-right: 0px;
+    background-image:url("../img/m02.png");
+    background-attachment: scroll;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#text2_PC {
+    float: left;
+    font-size: 50px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 60px;
+    margin-left: 115px;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0%;
+}
+
+#text3_PC {
+    float: none;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 36px;
+    margin-left: 121px;
+    margin-top: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 60px;
+}
+
+#BOX_02_TITLE_PC {
+    float: left;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 380px;
+    margin-right: 0%;
+    padding-top: 114px;
+}
+
+#BOX_002_PC {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 960px;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 110px;
+    background-color: rgb(255, 66, 66);
+    margin-right: auto;
+    position: relative;
+}
+/*--PC版：即時對獎無APP LOGO（結束）--*/
+
+/*--Mobile Broswer 宣傳版：兌彩券LOGO現身--*/
+#BOX_02 {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+    background-color: rgb(255, 66, 66);
+    margin-right: auto;   
+}
+
+#image4 {
+    float: left;
+    width: 85px;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0px;
+    position: absolute;
+    top: 310px;
+    bottom: auto;
+    left: 75px;
+    right: auto;
+}
+
+#BOX_02_PIC {
+    float: right;
+    height: 490px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 418px;
+    margin-right: 0px;
+    background-image:url("../img/m02.png");
+    background-attachment: scroll;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#text2 {
+    float: left;
+    font-size: 50px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 60px;
+    margin-left: 115px;
+    margin-top: 100px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0%;
+}
+
+#text3 {
+    float: none;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 36px;
+    margin-left: 121px;
+    margin-top: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 60px;
+}
+
+#BOX_02_TITLE {
+    float: left;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 380px;
+    margin-right: 0%;
+    padding-top: 114px;
+}
+
+#BOX_002 {
+    float: none;
+    height: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 960px;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 110px;
+    background-color: rgb(255, 66, 66);
+    margin-right: auto;
+    position: relative;
+	background-image: url(../img/bg_about_01.png); 
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 100%;
+	}
+
+#BOX_002_APP_LOGO{
+    width: 248px;
+    height: auto;
+    position: absolute;
+    top: 80px;
+    bottom: auto;
+    left: 150px;
+    right:auto;
+}
+/*--Mobile Broswer：兌彩券LOGO（結束）--*/
+
+#BOX_03 {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+    margin-right: auto;
+    background-color: rgb(155, 117, 211);
+}
+
+#BOX_003 {
+    float: none;
+    height: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 960px;
+    margin-right: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 110px;
+    background-color: rgb(155, 117, 211);
+}
+
+#BOX_03_TITLE {
+    float: right;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 48%;
+    margin-right: 0px;
+    padding-top: 150px;
+    padding-left: 44px;
+}
+
+#text4 {
+    float: left;
+    font-size: 50px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 60px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0%;
+    padding-right: 0px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+#text5 {
+    float: left;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 36px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0px;
+    padding-left: 10px;
+}
+
+#BOX_03_PIC {
+    float: left;
+    height: 490px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 426px;
+    margin-right: 0px;
+    background-image:url("../img/take_pic.png");
+    background-attachment: scroll;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-position: 0% 0%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#image5 {
+    float: left;
+    width: 111px;
+    max-width: 100%;
+    height: 95px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+
+#BOX_04 {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+    margin-right: auto;
+    background-color: rgb(255, 159, 66);
+}
+
+#BOX_004 {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 960px;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 110px;
+    background-color: rgb(255, 159, 66);
+    margin-right: auto;
+}
+
+#BOX_004_TITLE {
+    float: left;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 400px;
+    margin-right: 0%;
+    padding-top: 150px;
+    padding-left: 15px;
+}
+
+#image6 {
+    float: left;
+    width: 79px;
+    max-width: 100%;
+    height: 102px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+
+#text6 {
+    float: left;
+    font-size: 50px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 60px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0%;
+    padding-top: 35px;
+    padding-left: 20px;
+}
+
+#text7 {
+    float: left;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 36px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0%;
+    padding-left: 20px;
+}
+
+#BOX_004_PIC {
+    float: right;
+    height: 490px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 418px;
+    margin-right: 0px;
+    background-image:url("../img/m04.png");
+    background-attachment: scroll;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-position: 0% 0%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#BOX_05 {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+    margin-right: auto;
+    background-color: rgb(24, 206, 255);
+    display: block;
+}
+
+#BOX_005 {
+    float: none;
+    height: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 960px;
+    margin-right: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 110px;
+    background-color: rgb(24, 206, 255);
+}
+
+#BOX_05_TITLE {
+    float: right;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 49%;
+    margin-right: 0px;
+    padding-top: 170px;
+    padding-left: 40px;
+}
+
+#image7 {
+    float: left;
+    width: 115px;
+    max-width: 100%;
+    height: 66px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+
+#text8 {
+    float: left;
+    font-size: 50px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 60px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0%;
+    padding-right: 0px;
+    padding-left: 10px;
+    padding-top: 0px;
+}
+
+#text9 {
+    float: left;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 36px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0px;
+    padding-left: 10px;
+}
+
+#BOX_05_PIC {
+    float: left;
+    height: 490px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 426px;
+    margin-right: 0px;
+    background-image:url("../img/m05.png");
+    background-attachment: scroll;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-position: 0% 0%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#BOX_06 {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+    margin-right: auto;
+    background-color: rgb(225, 203, 44);
+}
+
+#BOX_006 {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 960px;
+    margin-right: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 110px;
+    background-color: rgb(225, 203, 44);
+}
+
+#BOX_006_TITLE {
+    float: left;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 400px;
+    margin-right: 0%;
+    padding-top: 145px;
+    padding-left: 15px;
+}
+
+#image8 {
+    float: left;
+    width: 75px;
+    max-width: 100%;
+    height: 103px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+}
+
+#text10 {
+    float: left;
+    font-size: 50px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 60px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0%;
+    padding-top: 35px;
+    padding-left: 20px;
+}
+
+#text11 {
+    float: left;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 36px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(255, 255, 255);
+    margin-right: 0%;
+    padding-left: 20px;
+}
+
+#BOX_006_PIC {
+    float: right;
+    height: 490px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 395px;
+    margin-right: 0px;
+    background-image:url("../img/m06.png");
+    background-attachment: scroll;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-position: 0% 0%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#article {
+    float: none;
+    height: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+#BOX_007 {
+    float: none;
+    height: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 960px;
+    margin-right: auto;
+    padding: 50px 100px;
+}
+
+#text12 {
+    float: left;
+    font-size: 40px;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 60px;
+    margin: 0px;
+    clear: none;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-top: 0px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    min-width: 0px;
+}
+
+#text13 {
+    float: left;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+    padding-top: 20px;
+}
+
+#textspan6 {
+    float: none;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+#text14 {
+    float: left;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+}
+
+#text15 {
+    float: left;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+    padding-top: 10px;
+}
+
+#text16 {
+    float: left;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+}
+
+#textspan7 {
+    float: none;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+#text17 {
+    float: left;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+    padding-top: 10px;
+}
+
+#textspan8 {
+    float: none;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+#text18 {
+    float: left;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+}
+
+#text19 {
+    float: left;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+    padding-top: 10px;
+}
+
+#textspan9 {
+    float: none;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+#text20 {
+    float: left;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+}
+
+#line_title{
+    color:#2cbf13;
+}
+
+#text21 {
+    float: left;
+    font-size: 24px;
+    font-weight: 600;
+    width: auto;
+    height: auto;
+    text-align: left;
+    line-height: 24px;
+    margin: 0px;
+    clear: both;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+    padding-top: 18px;
+    padding-bottom: 8px;
+}
+/*--在臉書上關注我們--*/
+#FB-LIKE{
+    display: block;
+    float: left;
+    padding: 0 0 10px 0;
+}
+#text22 {
+    float: left;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0px;
+    clear: both;
+    min-height: 0px;
+    color: rgb(48, 48, 48);
+    padding-left: 0px;
+}
+/*--桌機下面FB按鈕--*/
+
+#FB-GO{
+    display: block;
+    float: left;
+    padding-top: 10px;
+    }
+
+/*--桌機Line QRcode--*/
+#LINE-QRCODE{
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    line-height: 35px;
+    padding-top: 5px;
+    color: dimgray;
+    clear: both;
+}
+
+/*--桌機Line按鈕（隱藏）--*/
+#LINE-BUTTON{
+    display: none;
+}
+
+#BOX_08 {
+    float: left;
+    height: 600px;
+    margin: 0px;
+    clear: none;
+    width: 100%;
+    background-color: rgb(131, 203, 222);
+}
+
+#BOX_008 {
+    float: none;
+    height: 600px;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    width: 960px;
+    margin-right: auto;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(131, 203, 222);
+}
+
+#image11 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 95px;
+    left: 6.870117%;
+    z-index: 0;
+}
+
+#image10 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 201px;
+    left: 49.583333%;
+    z-index: 1;
+    right: 154px;
+}
+
+#image12 {
+    float: left;
+    width: 82px;
+    max-width: 100%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: static;
+    top: 0px;
+    left: 0px;
+    z-index: 4;
+    margin-top: 0px;
+    margin-left: 9px;
+    margin-right: 0px;
+    display: block;
+}
+
+#image13 {
+    float: left;
+    width: 82px;
+    max-width: 100%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: static;
+    top: 0px;
+    left: 0px;
+    z-index: 4;
+    margin-top: 0px;
+    margin-left: 7px;
+    margin-right: 0%;
+    display: block;
+}
+
+#image14 {
+    float: left;
+    width: 82px;
+    max-width: 100%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: static;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    margin-top: 0px;
+    margin-left: 7px;
+    margin-right: 0%;
+    display: block;
+    padding-left: 0px;
+}
+
+#BOX_08_BUTTON {
+    float: left;
+    height: auto;
+    clear: none;
+    width: 277.00000320000004px;
+    position: absolute;
+    top: 287px;
+    left: 51.614583%;
+    z-index: 8;
+}
+/*--首頁iphone圖（桌機）--*/
+#BOX_01_IPHONE {
+	float: left;
+	height: 518px;
+	width: 500px;
+	position: absolute;
+	top: 82px;
+	left: -25px;
+	background-image: url("../img/top_iphone.png");
+}
+/*--首頁上方FB按鈕（桌機）--*/
+#BOX_01_FB{
+	float: left;
+	height: 100px;
+	width: 300px;
+	position: absolute;
+	top: 0px;
+	right: -25px;
+	background-image: url("../img/fb_botton.png");
+}
+}
+#image9 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: both;
+    color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #image1 {
+	width: 155px;
+	top: 65px;
+	right: auto;
+	height: auto;
+	left: 321px;
+	max-width: none;
+	bottom: auto;
+    }
+    h1{
+        text-indent: -9999px;
+    }
+    #image {
+	width: 255px;
+	height: auto;
+	top: 71px;
+	right: auto;
+	left: 467px;
+	max-width: none;
+    }
+
+    #BOX_01 {
+        width: 768px;
+        display: block;
+    }
+
+    #text {
+	top: 220px;
+	left: 343px;
+	right: 47px;
+	height: auto;
+	font-size: 16px;
+	line-height: 28px;
+	min-height: 0px;
+	padding-right: 0px;
+	bottom: auto;
+	display: block;
+	overflow: hidden;
+	text-align: center;
+    }
+
+    #BAR {
+        top: 346.34375px;
+        left: 333.43749888px;
+        right: 27px;
+        height: auto;
+        width: 384px;
+        max-width: none;
+    }
+
+    #number{
+        position: absolute;
+        top: 365px;
+        right: 53px;
+        z-index:20;
+    }
+    #number span{
+        font-family:Impact,Arial,Helvetica;
+        font-size:36px;
+        color: #fff;
+        margin-right: 3px;
+        position: relative;
+        width: 28px;
+        height: 48px;
+        display: block;
+        float: left;
+        text-align: center;
+    }
+    #number span:nth-child(3n+1){
+        margin-right: 12px;
+    }
+
+    #BUTTON {
+        display: none;
+        width: 400px;
+        top: 76.666667%;
+        right: auto;
+        left: 327px;
+    }
+
+    #image2 {
+        width: 200px;
+        margin-top: 0px;
+        margin-left: 0%;
+        clear: none;
+    }
+
+    #image3 {
+        width: 200px;
+        margin-top: 0px;
+        margin-left: 0%;
+        clear: none;
+    }
+	
+/*--平板：積點活動Banner CSS--*/
+	#AD-BANNER{
+		display: block;
+		width: 450px;
+		height: 151px;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-image: url(../img/ad-banner-pad.png);
+		background-position: none;
+		position: absolute;
+		top: auto;
+		left: auto;
+		right: 14px;
+		bottom: 0;
+		}
+	
+/*--平板：積點活動掃描QR Code的圖--*/
+	#AD-QRCODE{
+		display: block;
+		float: left;
+		height: auto;
+		clear: none;
+		width: 93px;
+		padding: 0px;
+		position: absolute;
+		top: auto;
+		left: auto;
+		bottom: 45px;
+		right: 336px;
+		z-index: 30;
+		}
+    
+/*--平板：首頁iPhone圖片--*/
+    #BOX_01_IPHONE {
+        width: 325px;
+        top: 0px;
+        left: 18px;
+        height: 600px;
+        bottom: auto;
+        padding-top: 0px;
+        background-image:url("../img/top_iphone-2.png");
+        background-attachment: scroll;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        right: auto;
+        background-position: 50% 46px;
+        background-repeat: no-repeat no-repeat;
+    }
+/*--首頁平版上方FB按鈕--*/
+#BOX_01_FB{
+	height: 62px;
+	width: 191px;
+	position: absolute;
+	top: 20px;
+	right: 15px;
+	background-image: url("../img/fb_botton_x2.png");
+	background-attachment: scroll;
+	-webkit-background-size: 90%;
+	background-size: 90%;
+	background-repeat: no-repeat no-repeat;
+}
+
+    #text1 {
+        top: 291px;
+        left: 340px;
+        right: 45px;
+        height: auto;
+        bottom: auto;
+    }
+
+/*--PC：即時對獎，沒有出現兌彩券LOGO（平板）--*/
+    #BOX_002_PC {
+        width: 768px;
+        padding: 111px 10% 0px;
+    }
+
+    #BOX_02_TITLE_PC {
+        width: 45%;
+        max-width: none;
+        padding-top: 127px;
+        margin-top: 0px;
+        margin-bottom: auto;
+        padding-right: 50px;
+        padding-left: 20px;
+        margin-left: -0.058773%;
+        clear: none;
+    }
+    
+    #BOX_002_APP_LOGO_PC{
+        width: 248px;
+        height: auto;
+        position: absolute;
+        top: 80px;
+        bottom: auto;
+        left: 65px;
+        right:auto;
+    }
+
+    #BOX_02_PIC_PC {
+        width: 55%;
+        max-width: none;
+        margin-right: 0px;
+        margin-top: 0px;
+        clear: none;
+        height: 489px;
+        background-image:url("../img/m02.png");
+        background-attachment: scroll;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        background-position: 0% 0%;
+        background-repeat: no-repeat no-repeat;
+    }
+
+    #image4_PC {
+        overflow: auto;
+        visibility: visible;
+        display: none;
+    }
+
+    #text2_PC {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+        text-align: left;
+        margin-top: 25px;
+        padding-bottom: 10px;
+    }
+    
+    #text3_PC {
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        padding: 0px;
+    }
+
+    
+    
+/*--PC：即時對獎，沒有出現兌彩券LOGO（平板結束）--*/
+    
+/*--Mobile Broswer 宣傳版：兌彩券LOGO現身（平板）--*/
+    #BOX_002 {
+        width: 768px;
+		height: auto;
+        padding: 111px 10% 0px;
+		
+		float: none;
+		margin-left: auto;
+		margin-top: 0px;
+		clear: none;
+		background-color: rgb(255, 66, 66);
+		margin-right: auto;
+		position: relative;
+		background-image: url(../img/bg_about_01.png); 
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 110%;
+	
+    }
+
+    #BOX_02_TITLE {
+        width: 45%;
+        max-width: none;
+        padding-top: 127px;
+        margin-top: 0px;
+        margin-bottom: auto;
+        padding-right: 50px;
+        padding-left: 20px;
+        margin-left: -0.058773%;
+        clear: none;
+    }
+    
+    #BOX_002_APP_LOGO{
+        width: 248px;
+        height: auto;
+        position: absolute;
+        top: 80px;
+        bottom: auto;
+        left: 65px;
+        right:auto;
+    }
+
+    #BOX_02_PIC {
+        width: 55%;
+        max-width: none;
+        margin-right: 0px;
+        margin-top: 0px;
+        clear: none;
+        height: 489px;
+        background-image:url("../img/m02.png");
+        background-attachment: scroll;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        background-position: 0% 0%;
+        background-repeat: no-repeat no-repeat;
+    }
+
+    #image4 {
+        overflow: auto;
+        visibility: visible;
+        display: none;
+    }
+
+    #text3 {
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        padding: 0px;
+    }
+
+    #text2 {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+        text-align: left;
+        margin-top: 85px;
+        padding-bottom: 10px;
+    }
+/*--Mobile Broswer 宣傳版：兌彩券LOGO（平板結束）--*/
+    
+    
+    #BOX_003 {
+        width: 768px;
+        padding: 70px 10% 0px;
+    }
+
+    #image5 {
+        display: none;
+    }
+
+    #BOX_03_TITLE {
+        margin-left: 0px;
+        margin-right: 0px;
+        float: right;
+        margin-top: 0px;
+        clear: none;
+        width: 45%;
+        padding-right: 0%;
+        padding-left: 40px;
+        padding-top: 180px;
+    }
+
+    #BOX_03_PIC {
+        width: 55%;
+        height: 530px;
+    }
+
+    #text4 {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+        text-align: left;
+        padding-left: 0px;
+        padding-top: 0px;
+        padding-bottom: 10px;
+    }
+
+    #text5 {
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    #BOX_004 {
+        width: 768px;
+        padding: 110px 10%;
+    }
+
+    #image6 {
+        display: none;
+    }
+
+    #BOX_004_TITLE {
+        width: 45%;
+        padding-top: 150px;
+    }
+
+    #BOX_004_PIC {
+        width: 55%;
+    }
+
+    #text7 {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    #text6 {
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 10px;
+    }
+
+    #BOX_005 {
+        width: 768px;
+        padding: 80px 60px 0px;
+    }
+
+    #BOX_05_PIC {
+        width: 55%;
+        height: 520px;
+    }
+
+    #BOX_05_TITLE {
+        width: 45%;
+        padding-top: 206px;
+    }
+
+    #image7 {
+        display: none;
+    }
+
+    #BOX_006 {
+        width: 768px;
+        padding: 110px 10% 0px;
+    }
+
+    #BOX_006_TITLE {
+        width: 45%;
+        padding-left: 0px;
+        padding-right: 20px;
+        padding-top: 140px;
+    }
+
+    #image8 {
+        visibility: visible;
+        display: none;
+    }
+
+    #BOX_006_PIC {
+        width: 55%;
+    }
+
+    #text10 {
+        padding-left: 0px;
+    }
+
+    #text11 {
+        padding-left: 0px;
+    }
+
+    #BOX_007 {
+        width: 768px;
+        padding: 50px 10% 55px;
+    }
+    
+/*--平版下面FB按鈕--*/
+
+    #FB-GO{
+    display: block;
+    float: left;
+    padding-top: 10px;
+    clear: both;
+    }
+    
+/*--平版 Line QR Code 隱藏--*/
+    #LINE-QRCODE{
+    display: none;
+    }
+
+/*--平版 Line 按鈕--*/
+    #LINE-BUTTON{
+    float: left;
+    display: block;
+    padding-top: 15px;
+    color: dimgray;
+    clear: both;
+    }
+
+
+    #BOX_008 {
+        width: 768px;
+    }
+
+    #image11 {
+        top: 173.75px;
+        left: 7.967122%;
+        height: auto;
+        width: auto;
+        max-width: 50%;
+        bottom: auto;
+    }
+
+    #image10 {
+        top: 232px;
+        left: 45.739746%;
+        right: 96.71875px;
+    }
+
+    #BOX_08_BUTTON {
+        width: 269.3376px;
+        top: 306px;
+        left: 384px;
+        right: auto;
+    }
+
+    #image12 {
+        width: 26%;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    #image13 {
+        width: 26%;
+        margin-left: 23px;
+    }
+
+    #image14 {
+        width: 26%;
+        margin-left: 23px;
+    }
+
+    #image9 {
+        width: 100%;
+        max-width: none;
+    }
+
+    #article {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    #BOX_01 {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        padding: 20px 5% 0px;
+        background-image:url("../img/bg_01.png");
+        background-attachment: scroll;
+        -webkit-background-size: 1191px 100%;
+        background-size: 1191px 100%;
+        background-color: rgb(255, 228, 46);
+        background-position: 50% 100%;
+        background-repeat: no-repeat no-repeat;
+    }
+
+    #image1 {
+        float: none;
+        clear: none;
+        width: 175px;
+        top: 0px;
+        left: 0px;
+        position: static;
+        right: auto;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0px;
+    }
+	 
+    #image {
+        clear: none;
+        float: none;
+        padding-right: 0%;
+        padding-left: 0%;
+        width: 230px;
+        position: static;
+        top: 0px;
+        left: 0px;
+        margin: 0 auto;
+        padding-bottom: 0px;
+        height: auto;
+        max-width: none;
+    }
+     h1{
+        font-size: 1px;
+        text-indent: -9999px;
+    }
+    #text {
+        margin-top: 6px;
+        margin-left: 4.84375%;
+        clear: none;
+        display: none;
+    }
+
+    #text1 {
+        width: 100%;
+        margin-left: auto;
+        float: none;
+        clear: none;
+        font-weight: 700;
+        line-height: 50px;
+        font-size: 21px;
+        top: 0px;
+        left: 0px;
+        position: static;
+        right: auto;
+        margin-top: 0px;
+        margin-right: auto;
+    }
+
+    #BAR {
+        width: 100%;
+        max-width: none;
+        margin-left: auto;
+        float: none;
+        clear: none;
+        right: auto;
+        left: 0px;
+        position: static;
+        top: 0px;
+        margin-top: 0px;
+        margin-right: auto;
+        display: none;
+    }
+    .counter{
+      margin: 0 auto;
+      text-align: center;
+    }
+    #number{
+        font-size:22px;
+        background-image: -moz-linear-gradient( 90deg, rgb(102,102,102) 0%, rgb(48,48,48) 7%, rgb(0,0,0) 50%, rgb(39,39,39) 52%, rgb(75,75,75) 78%, rgb(111,111,111) 100%);
+        background-image: -webkit-linear-gradient( 90deg, rgb(102,102,102) 0%, rgb(48,48,48) 7%, rgb(0,0,0) 50%, rgb(39,39,39) 52%, rgb(75,75,75) 78%, rgb(111,111,111) 100%);
+        background-image: -ms-linear-gradient( 90deg, rgb(102,102,102) 0%, rgb(48,48,48) 7%, rgb(0,0,0) 50%, rgb(39,39,39) 52%, rgb(75,75,75) 78%, rgb(111,111,111) 100%);
+        box-shadow: inset 0px 1px 5.88px 1.12px rgba(0, 0, 0, 0.25);
+        border-radius:6px;
+        padding:10px 7px 10px 18px;
+        position: static;
+    }
+    #number span{
+      font-family:Impact,Arial,Helvetica;
+      font-size:1em;
+      margin-right: 2px;
+      width: 19px;
+      height: 28px;
+      padding-top: 5px;
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      border:solid 1px rgb(14,158,103);
+      text-shadow: 0px 0px 3.08px rgba(0, 0, 0, 0.18);
+      background-image: -moz-linear-gradient( 90deg, rgb(0,193,127) 5%, rgb(0,133,82) 27%, rgb(14,158,103) 83%);
+      background-image: -webkit-linear-gradient( 90deg, rgb(0,193,127) 5%, rgb(0,133,82) 27%, rgb(14,158,103) 83%);
+      background-image: -ms-linear-gradient( 90deg, rgb(0,193,127) 5%, rgb(0,133,82) 27%, rgb(14,158,103) 83%);
+      box-shadow: 0px 0px 3.08px 0.92px rgba(0, 0, 0, 0.18), inset 0px 3px 7.92px 1.08px rgba(0, 0, 0, 0.33);
+      border-radius:4px;
+      float: none;
+    }
+    #number span:nth-child(3n+1){
+        margin-right: 11px;
+    }
+    #number span:nth-child(3n+1):after{
+        content:",";
+        color: rgb(0, 187, 121);
+        font-size:0.75em;
+        position: absolute;
+        bottom: 0px;
+        right: -8px;
+    }
+    #number span:first-child:before{
+        content:"$";
+        color: rgb(0, 187, 121);
+        font-size:0.75em;
+        position: absolute;
+        bottom: 0px;
+        left: -13px;
+    }
+    #number span:last-child{
+        margin-right: 0px;
+    }
+    #number span:last-child:after{
+        content:"";
+        position: absolute;
+    }
+
+/*--手機：積點活動Banner CSS--*/
+	#AD-BANNER{
+		display: block;
+		width:100%;
+		margin: 0 auto 10px auto;
+		min-height: auto;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-image: url(../img/ad-banner-phone.png);
+		background-position:center;
+		position:static;
+		top: auto;
+		left: auto;
+		right: auto;
+		bottom: auto;
+		}
+/*--手機：積點活動掃描QR Code的圖--*/
+	#AD-QRCODE{
+		display: no;
+		float: none;
+        clear: none;
+		width: 150px;
+		height: auto;
+        position: static;
+		top: auto;
+        left: auto;
+        bottom: 20px;
+        right: auto;
+        margin: 20px auto 5px auto;
+        padding: 0px;
+	}
+	
+	#BUTTON {
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+        margin-top: 0px;
+        width: 100%;
+        padding-top: 35px;
+        position: static;
+        top: 0px;
+        left: 0px;
+    }
+    #image2 {
+        width: 50%;
+    }
+
+    #image3 {
+        width: 50%;
+        margin-left: 0%;
+    }
+
+/*--PC活動頁：「即時對獎」沒有出現兌彩券LOGO--*/
+    #BOX_02_PC{
+        height: auto;
+    }
+        
+    #BOX_002_PC {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        padding-right: 10%;
+        padding-left: 10%;
+        clear: none;
+        padding-top: 0px;
+    }
+
+    #image4_PC {
+        display: none;
+    }
+
+    #text3_PC {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 30px;
+        float: none;
+        margin-right: auto;
+    }
+    
+    #BOX_02_TITLE_PC {
+        padding: 5px 0px 25px 0px;
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+    }
+    
+    #BOX_002_APP_LOGO_PC{
+        display: block;
+        margin: 10px auto 0px auto;
+        
+        width: 230px;
+        height: auto;
+        
+        position: static;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right:auto;
+    }
+
+    #text2_PC {
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    #BOX_02_PIC_PC {
+        width: 100%;
+        height: 290px;
+        margin-top: 0px;
+        clear: none;
+        margin-left: auto;
+        float: none;
+        margin-right: auto;
+        background-image:url("../img/m02.png");
+        background-attachment: scroll;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        background-position: 0% 0%;
+        background-repeat: no-repeat no-repeat;
+    }
+
+    #textspan_PC {
+        float: none;
+        font-size: 35px;
+        line-height: 40px;
+    }
+    
+/*--PC活動頁：「即時對獎」沒有出現兌彩券LOGO（手機結束）--*/
+    
+/*--Mobile Broswer 宣傳版：兌彩券LOGO現身--*/  
+    #BOX_02{
+        height: auto;
+    }
+        
+    #BOX_002 {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+		margin-left: auto;
+		margin-right: auto;
+		
+		padding-top: 0px;
+		padding-left: 10%;
+        padding-right: 10%;
+        
+        clear: none;	
+		float: none;		
+		
+		background-color: rgb(255, 66, 66);
+		position: relative;
+		background-image: url(../img/bg_about_01.png); 
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 140%;
+    }
+
+    #image4 {
+        display: none;
+    }
+
+    #text3 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 30px;
+        float: none;
+        margin-right: auto;
+    }
+    
+    #BOX_02_TITLE {
+        padding: 5px 0px 25px 0px;
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+    }
+    
+    #BOX_002_APP_LOGO{
+        display: block;
+        margin: 10px auto 0px auto;
+        
+        width: 230px;
+        height: auto;
+        
+        position: static;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right:auto;
+    }
+
+    #text2 {
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    #BOX_02_PIC {
+        width: 100%;
+        height: 290px;
+        margin-top: 0px;
+        clear: none;
+        margin-left: auto;
+        float: none;
+        margin-right: auto;
+        background-image:url("../img/m02.png");
+        background-attachment: scroll;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        background-position: 0% 0%;
+        background-repeat: no-repeat no-repeat;
+    }
+
+    #textspan {
+        float: none;
+        font-size: 35px;
+        line-height: 40px;
+    }
+    
+/*--Mobile Broswer 宣傳版：兌彩券LOGO現身--*/
+    
+    #BOX_003 {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        padding-right: 5%;
+        padding-left: 5%;
+        clear: none;
+        padding-top: 0px;
+    }
+
+    #BOX_03_TITLE {
+        padding: 33px 0px;
+        width: 100%;
+        height: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        clear: none;
+        margin-left: auto;
+        float: none;
+    }
+
+    #text4 {
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        text-align: center;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+    }
+
+    #textspan1 {
+        float: none;
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    #text5 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 36px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    #BOX_03_PIC {
+        width: 90%;
+        height: 440px;
+        margin-top: 0px;
+        clear: none;
+        margin-left: auto;
+        float: none;
+        margin-right: auto;
+    }
+
+    #image5 {
+        display: none;
+    }
+
+    #BOX_004 {
+        width: 100%;
+        height: 500px;
+        margin-top: 0px;
+        padding-right: 10%;
+        padding-left: 10%;
+        clear: none;
+        padding-top: 0px;
+    }
+
+    #BOX_004_TITLE {
+        padding-top: 33px;
+        width: 100%;
+        height: auto;
+        padding-bottom: 33px;
+        padding-left: 0px;
+    }
+
+    #image6 {
+        display: none;
+    }
+
+    #text6 {
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        text-align: center;
+        padding-top: 0px;
+        font-size: 50px;
+        line-height: 60px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+    }
+
+    #text7 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 36px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    #BOX_004_PIC {
+        width: 100%;
+        height: 338px;
+        margin-top: 0px;
+        clear: both;
+        margin-left: auto;
+        float: none;
+        margin-right: auto;
+    }
+
+    #textspan2 {
+        float: none;
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    #BOX_04 {
+        height: 500px;
+    }
+
+
+    #BOX_03 {
+        height: 500px;
+    }
+
+    #HEADER {
+        height: auto;
+    }
+
+    #BOX_05 {
+        height: 500px;
+    }
+
+    #BOX_005 {
+        width: 100%;
+        height: 500px;
+        margin-top: 0px;
+        padding-right: 5%;
+        padding-left: 5%;
+        clear: none;
+        padding-top: 0px;
+    }
+
+    #BOX_05_TITLE {
+        padding: 25px 0px 20px;
+        width: 100%;
+        height: auto;
+        margin-right: 0px;
+        margin-top: 0px;
+        clear: none;
+        margin-left: 0px;
+    }
+
+    #image7 {
+        display: none;
+    }
+
+    #text8 {
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        text-align: center;
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    #text9 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 36px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    #BOX_05_PIC {
+        width: 90%;
+        height: 454px;
+        margin-top: 0px;
+        clear: both;
+        margin-left: auto;
+        float: none;
+        margin-right: auto;
+    }
+
+    #BOX_06 {
+        height: 500px;
+    }
+
+    #BOX_006 {
+        width: 100%;
+        height: 500px;
+        margin-top: 0px;
+        padding-right: 10%;
+        padding-left: 10%;
+        clear: none;
+        padding-top: 0px;
+    }
+
+    #BOX_006_TITLE {
+        padding: 25px 0px 20px;
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+    }
+
+    #image8 {
+        display: none;
+    }
+
+    #text10 {
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        text-align: center;
+        padding-top: 0px;
+        font-size: 50px;
+        line-height: 60px;
+        padding-left: 0px;
+    }
+
+    #text11 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 36px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    #BOX_006_PIC {
+        width: 100%;
+        height: 359px;
+        margin-top: 0px;
+        clear: none;
+        margin-left: auto;
+        float: none;
+        margin-right: auto;
+    }
+
+    #textspan3 {
+        float: none;
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    #textspan4 {
+        float: none;
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    #article {
+        height: auto;
+    }
+
+    #BOX_007 {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        padding-right: 10%;
+        padding-left: 10%;
+        clear: none;
+        padding-top: 0px;
+    }
+
+    #text12 {
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        text-align: center;
+        padding-top: 15px;
+        font-size: 50px;
+        line-height: 60px;
+        padding-left: 0px;
+        padding-bottom: 7px;
+    }
+
+    #text13 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 30px;
+        text-align: left;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+        padding-top: 15px;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+
+    #text14 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 20px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+    }
+
+    #text15 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 30px;
+        text-align: left;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+
+    #text16 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 20px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+    }
+
+    #text17 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 30px;
+        text-align: left;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+
+    #text18 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 20px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+    }
+
+    #text19 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 30px;
+        text-align: left;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+    
+
+    #text20 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 20px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+    }
+
+    #text21 {
+        width: 100%;
+        margin-top: 0px;
+        font-size: 20px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 20px;
+        text-align: left;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;        
+        color: rgb(0, 0, 0);
+    }
+
+    #text22 {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 20px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+    }
+    
+    /*--手機FB按鈕--*/
+    #FB-GO{
+        display: block;
+        float: left;
+        padding-top: 0;
+        padding-bottom: 15px;
+        clear: both;
+    }
+    
+    #text23{
+        width: 100%;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        height: auto;
+        line-height: 20px;
+        float: none;
+        margin-right: auto;
+        padding-left: 0px;
+    }
+    
+/*--MOBILE_Line QR code 隱藏--*/
+    #LINE-QRCODE{
+    display: none;
+    }
+    
+/*--MOBILE_Line 按鈕--*/    
+    #LINE-BUTTON{
+    float: left;
+    display: block;
+    padding-top: 15px;
+    color: dimgray;
+    clear: both;
+    }
+
+    #textspan5 {
+        float: none;
+        font-size: 28px;
+        line-height: 40px;
+        padding-bottom: 0px;
+        font-weight: 600;
+        letter-spacing: 0px;
+    }
+
+    #textspan6 {
+        font-size: 20px;
+    }
+
+    #textspan7 {
+        font-size: 20px;
+    }
+
+    #textspan8 {
+        font-size: 20px;
+    }
+
+    #textspan9 {
+        font-size: 20px;
+    }
+
+    #textspan10 {
+        font-size: 20px;
+    }
+
+    #BOX_008 {
+        width: 100%;
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    #BOX_08_BUTTON {
+        position: static;
+        top: 0px;
+        left: 0px;
+        width: 270px;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+        padding: 20px 0px 30px;
+    }
+
+    #image11 {
+        position: static;
+        top: 0px;
+        left: 0px;
+        margin-top: 0px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        max-width: none;
+        width: 100%;
+        float: none;
+    }
+
+    #image10 {
+        display: none;
+    }
+
+    #BOX_08 {
+        height: auto;
+        padding: 0px 5%;
+    }
+
+    #image12 {
+        max-width: 100%;
+        padding-left: 0px;
+        width: 80px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #image13 {
+        margin: 0px 15px;
+        padding-left: 0px;
+        width: 80px;
+    }
+
+    #image14 {
+        margin-left: 0px;
+        padding-left: 0px;
+        width: 80px;
+        margin-right: 0px;
+    }
+/*----首頁手機IPHONE隱藏----*/
+    #BOX_01_IPHONE {
+        display: none;
+    }
+
+/*----首頁手機FB按鈕隱藏----*/
+#BOX_01_FB{
+	display: none;}
+    #image9 {
+        height: 5px;
+    }
+

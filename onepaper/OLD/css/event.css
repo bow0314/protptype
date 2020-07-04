@@ -1,0 +1,288 @@
+/* ---reset.css--- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ---reset.css--- */
+*.{box-sizing: border-box;}
+
+html, body{
+    font-family:Arial, Helvetica, "Microsoft JhengHei", sans-serif;
+    background-color: #ba0a33;
+    background-image: url(../images/bg_red.jpg); 
+    -webkit-text-size-adjust:none;
+}
+
+.WARPPER{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-width: 320px;
+    
+}
+
+#TOP-MENU {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 60px;     
+}
+
+#TOP-MENU #BTN{
+    display: block;
+    width: 45px;
+    height: 35px;
+    position: absolute;
+    top:20px;
+    right: 10px;
+    text-indent: -9999px;
+    background-image: url(../images/menu-btn.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    
+}
+#MENU{
+    display: none;
+    position: fixed;
+    top:0;
+    z-index: 888;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 0, 0, 0.83);
+    
+}
+
+#MENU ul{
+    width: 260px;
+    height: 260px;
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#MENU ul li{
+    width: 100%;
+    float: none;
+}
+
+#MENU ul li:nth-child(2) a{
+    border-radius: 8px 8px 0px 0px;
+    padding-top: 12px;
+    border-bottom: #d48686 solid 1px;
+    padding: 30px 0px 10px 0px
+}
+
+#MENU ul li:nth-child(3) a{
+    line-height: 70px;
+    border-bottom: #d48686 solid 1px;
+}
+
+#MENU ul li:nth-child(4) a{
+    line-height: 70px;
+    border-bottom: #d48686 solid 1px;
+}
+
+#MENU ul li:last-child a{
+    border-radius: 0px 0px 8px 8px;
+    padding-bottom: 5px;
+    line-height: 70px;
+}
+
+#MENU ul li a{
+    display: block;
+    width: 100%;
+    line-height: 22px;
+    text-decoration: none;
+    background-color: rgba(255, 187, 187, 0.85);
+    color: #2e0000;
+    font-size: 22px;
+    text-align: center;
+    
+}
+
+#MENU ul li a:hover{
+    background-color: #b20000;
+    color: #fff;
+}
+
+#MENU #XX{
+    display: block;
+    width: 38px;
+    height: 38px;
+    background-color: #000;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 38px;
+    border: rgba(255, 212, 196, 0.53) solid 1px;
+    font-weight: 400;
+    
+    position: absolute;
+    right: -15px;
+    top: -15px;
+}
+
+#MENU p{
+    color: #a00;
+    line-height: 60px;
+    font-size: 46px;
+    font-weight: 600;
+}
+
+.HEADER{
+    width: 100%;
+    
+}
+.H1-TITLE{
+    width: 100%;
+    height: 0;
+    padding-bottom: 82%;
+    background-image: url(../images/h1.png);
+    background-size: cover;
+    background-position: center top;
+    text-indent: -9999px;
+    
+}
+.FORM-APP{
+    width: 100%;
+    height: auto;
+    padding: 0px 20px 20px 20px;
+    color: #fff;
+}
+
+.FORM-APP h3{
+    font-size: 20px;
+    padding: 15px 0px;
+    font-weight: 600;
+}
+.input-group{
+    padding-bottom: 10px;
+    
+}
+
+.input-group-addon{
+    font-weight:bold;
+    font-size: 17px;
+    color: #808080;
+}
+.form-control{
+    height: 50px;
+}
+
+.FORM-APP ul{
+    list-style: none;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.FORM-APP ul li{
+    width: 50%;
+    height: auto;
+    float: left;
+}
+
+.FORM-APP ul li a{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.FORM-APP ul li.BTN a{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.FORM-APP ul li a:hover{}
+
+.NOTE-1{
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px 20px 0px 20px;
+    background-image: url(../images/note_1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.NOTE-2{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px 20px 0px 20px;
+}
+.NOTE-T1{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding: 40px 0px 0px 0px;
+}
+.NOTE-T{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+}
+.NOTE-1 p{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px 0px 5px 0px;
+}
+.NOTE-2 p{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px 0px 5px 0px;
+}
+
