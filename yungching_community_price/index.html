@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西班牙水花園成交行情</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yc-primary:#FFCC33;
+    --yc-primary-dark:#FFBE18;
+    --yc-primary-bg:#FFF8E5;
+    --yc-text:#333333;
+    --yc-text-secondary:#666666;
+    --yc-text-hint:#999999;
+    --yc-text-strong:#111111;
+    --yc-price:#D42F45;
+    --yc-link:#0E5EBD;
+    --yc-link-hover:#0A4A95;
+    --yc-border:#E0E0E0;
+    --yc-border-input:#D8D9DC;
+    --yc-border-alt:#DFDFDF;
+    --yc-bg-page:#F2F2F2;
+    --yc-bg-card:#FFFFFF;
+    --yc-bg-data:#F2F2F2;
+    --yc-tag-bg: rgba(17,17,17,0.07);
+    --yc-pagination-active:#FFEB89;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC","Helvetica Neue",Arial,sans-serif;
+    background:var(--yc-bg-page);
+    color:var(--yc-text);
+    font-size:14px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;}
+  ul{margin:0;padding:0;list-style:none;}
+  .num{font-family:"Oswald","Noto Sans TC",sans-serif;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  /* ---------- Logo mark ---------- */
+  .yc-logo{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  .yc-logo svg{flex:none;}
+  .yc-logo-text{font-weight:900;font-size:18px;color:var(--yc-text-strong);letter-spacing:1px;}
+  .yc-logo-text small{display:block;font-weight:400;font-size:10px;color:var(--yc-text-hint);letter-spacing:2px;}
+
+  /* ================= MOBILE HEADER ================= */
+  .header-mobile{
+    display:flex;align-items:center;justify-content:space-between;
+    height:52px;padding:0 14px;background:#fff;border-bottom:1px solid var(--yc-border);
+    position:sticky;top:0;z-index:40;
+  }
+  .header-mobile .mid{display:flex;align-items:center;gap:6px;color:var(--yc-text-hint);font-size:13px;}
+  .header-mobile .mid::before{content:"";width:1px;height:14px;background:var(--yc-border);}
+  .hamburger-btn{background:none;border:none;padding:4px;cursor:pointer;color:var(--yc-text);}
+
+  .page-head-mobile{
+    display:flex;align-items:center;gap:8px;background:#fff;
+    padding:10px 6px;border-bottom:1px solid var(--yc-border-input);
+  }
+  .page-head-mobile .icon-btn{width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:var(--yc-text);flex:none;background:none;border:none;cursor:pointer;}
+  .page-head-mobile .title-wrap{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;min-width:0;}
+  .page-head-mobile h1{font-size:15px;font-weight:700;color:var(--yc-text-strong);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .page-head-mobile .info-ic{color:var(--yc-text-hint);flex:none;}
+
+  /* mobile dropdown drawer */
+  .mobile-menu{
+    display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:60;
+  }
+  .mobile-menu.open{display:block;}
+  .mobile-menu__panel{
+    position:absolute;top:0;right:0;width:78%;max-width:320px;height:100%;background:#fff;
+    padding:20px;overflow-y:auto;
+  }
+  .mobile-menu__panel a{display:block;padding:12px 4px;font-size:15px;border-bottom:1px solid var(--yc-border);color:var(--yc-text);}
+  .mobile-menu__close{background:none;border:none;font-size:20px;float:right;cursor:pointer;color:var(--yc-text-hint);}
+
+  /* ================= DESKTOP HEADER ================= */
+  .header-desktop{display:none;}
+  .nav-toolbar{
+    background:#F7F7F7;border-bottom:1px solid var(--yc-border);height:34px;
+    font-size:12px;color:var(--yc-text-secondary);
+  }
+  .nav-toolbar .w{max-width:1200px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 8px;}
+  .nav-toolbar .right{display:flex;align-items:center;gap:20px;}
+  .nav-toolbar .right a:hover{color:var(--yc-text-strong);}
+  .nav-main{background:#fff;border-bottom:1px solid var(--yc-border);}
+  .nav-main .w{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:70px;padding:0 8px;gap:6px;}
+  .nav-main .menu{display:flex;align-items:center;height:100%;margin-left:12px;}
+  .nav-link{
+    position:relative;font-size:15px;font-weight:500;color:var(--yc-text);
+    padding:0 18px;height:100%;display:flex;align-items:center;cursor:pointer;
+  }
+  .nav-link .badge{
+    position:absolute;top:12px;right:6px;background:var(--yc-price);color:#fff;
+    font-size:9px;font-weight:700;padding:1px 4px;border-radius:8px;transform:translateX(50%);
+  }
+  .nav-link.active{color:var(--yc-text-strong);font-weight:700;box-shadow:inset 0 -3px 0 var(--yc-primary);}
+  .nav-link:hover{color:var(--yc-text-strong);}
+
+  /* ================= CONTAINER ================= */
+  .page-wrap{max-width:1200px;margin:0 auto;}
+  .container-pad{padding:0 16px;}
+
+  .breadcrumb-top{display:none;}
+  @media(min-width:1024px){
+    .breadcrumb-top{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:20px 16px 0;font-size:13px;color:var(--yc-text-hint);
+    }
+    .breadcrumb-top .crumbs{display:flex;align-items:center;flex-wrap:wrap;}
+    .breadcrumb-top .crumbs a{color:var(--yc-text-hint);}
+    .breadcrumb-top .crumbs a:hover{color:var(--yc-link);text-decoration:underline;}
+    .breadcrumb-top .crumbs .sep{margin:0 6px;color:#ccc;}
+    .breadcrumb-top .crumbs .current{color:var(--yc-text);}
+    .fav-btn{display:flex;align-items:center;gap:6px;color:var(--yc-text-secondary);background:none;border:none;cursor:pointer;font-size:13px;}
+    .fav-btn:hover{color:var(--yc-price);}
+  }
+
+  /* tab strip (desktop only) */
+  .tab-strip{display:none;}
+  @media(min-width:1024px){
+    .tab-strip{
+      display:flex;align-items:center;gap:4px;background:#fff;border:1px solid var(--yc-border);
+      border-radius:8px;margin:16px 16px 0;padding:0 8px;
+    }
+    .tab-strip .tab{
+      display:flex;align-items:center;gap:6px;height:70px;padding:0 20px;color:var(--yc-text-hint);
+      font-size:15px;cursor:pointer;border-bottom:3px solid transparent;
+    }
+    .tab-strip .tab.prev{color:var(--yc-text-secondary);gap:8px;}
+    .tab-strip .tab.active{color:var(--yc-text-strong);font-weight:700;border-bottom-color:var(--yc-primary);}
+    .tab-strip .tab .info-ic{color:var(--yc-text-hint);}
+  }
+
+  /* ================= CONTENT ================= */
+  .content-body{background:var(--yc-bg-page);padding:12px 6px 32px;}
+  @media(min-width:1024px){ .content-body{background:#fff;padding:32px 16px 40px;} }
+
+  .registry{max-width:100%;}
+
+  /* filter row */
+  .filter-row{display:flex;gap:10px;margin-bottom:14px;}
+  .filter-btn{
+    flex:1;display:flex;align-items:center;justify-content:space-between;gap:6px;
+    background:#fff;border:1px solid var(--yc-border-input);border-radius:6px;
+    padding:8px 12px;font-size:14px;font-weight:700;color:var(--yc-text-strong);cursor:pointer;
+    position:relative;
+  }
+  .filter-btn svg{flex:none;color:var(--yc-text-hint);transition:transform .15s;}
+  .filter-btn.open svg{transform:rotate(180deg);}
+  @media(min-width:1024px){
+    .filter-row{max-width:520px;gap:0;border:1px solid var(--yc-border-input);border-radius:6px;overflow:hidden;background:#fff;}
+    .filter-btn{border:none;border-right:1px solid var(--yc-border-alt);border-radius:0;}
+    .filter-btn:last-child{border-right:none;}
+  }
+  .filter-dropdown{
+    display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:160px;background:#fff;
+    border:1px solid var(--yc-border);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.12);
+    padding:6px 0;z-index:20;
+  }
+  .filter-dropdown.open{display:block;}
+  .filter-dropdown li{padding:9px 16px;font-size:13px;color:var(--yc-text);cursor:pointer;white-space:nowrap;}
+  .filter-dropdown li:hover{background:var(--yc-primary-bg);}
+  .filter-dropdown li.selected{color:var(--yc-link);font-weight:700;}
+
+  /* summary + action row */
+  .summary-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px;}
+  .summary-row .count{font-size:14px;color:var(--yc-text-strong);}
+  .summary-row .count b{font-weight:700;}
+  .action-btns{display:flex;align-items:center;gap:18px;position:relative;}
+  .track-btn{display:flex;align-items:center;gap:5px;background:none;border:none;cursor:pointer;color:var(--yc-text-hint);font-size:14px;font-weight:700;}
+  .track-btn.active{color:var(--yc-primary-dark);}
+  .track-btn svg{flex:none;}
+  .sort-btn{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;color:var(--yc-text);font-size:14px;font-weight:700;}
+  .sort-btn svg{flex:none;}
+
+  .sort-panel{
+    display:none;position:absolute;top:calc(100% + 8px);right:0;width:260px;background:#fff;
+    border:1px solid var(--yc-border);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.15);
+    padding:14px 16px;z-index:30;
+  }
+  .sort-panel.open{display:block;}
+  .sort-panel .row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;}
+  .sort-panel .row + .row{border-top:1px solid var(--yc-border);}
+  .sort-panel .label{font-size:13px;color:var(--yc-text-secondary);font-weight:700;}
+  .sort-panel .opts{display:flex;gap:6px;}
+  .sort-opt{
+    border:1px solid var(--yc-border-input);background:#fff;color:var(--yc-text-secondary);
+    font-size:12px;padding:5px 10px;border-radius:14px;cursor:pointer;white-space:nowrap;
+  }
+  .sort-opt.active{background:var(--yc-link);border-color:var(--yc-link);color:#fff;}
+
+  /* ---------- list ---------- */
+  .trade-list{display:flex;flex-direction:column;background:#fff;border-radius:0;overflow:hidden;}
+  @media(min-width:1024px){ .trade-list{border-radius:8px;} }
+
+  .trade-item{border-top:1px solid var(--yc-border-alt);padding:16px 8px;}
+  .trade-item:first-child{border-top:1px solid var(--yc-border-alt);}
+  .trade-item:last-child{border-bottom:1px solid var(--yc-border-alt);}
+
+  .trade-head{display:flex;align-items:center;gap:8px;padding:0 0 6px;flex-wrap:wrap;}
+  .trade-date{font-family:"Oswald",sans-serif;font-size:16px;color:var(--yc-text);}
+  .trade-type{font-size:16px;color:var(--yc-text);}
+  .trade-presale{
+    border:1px solid var(--yc-text);font-size:11px;padding:1px 5px;border-radius:2px;color:var(--yc-text);
+  }
+
+  .trade-addr{padding:0 0 10px;}
+  .trade-addr .addr-text{font-size:14px;color:var(--yc-text);margin:0 0 4px;word-break:break-all;}
+  .trade-addr .addr-link{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:700;color:var(--yc-link);}
+  .trade-addr .addr-link svg{flex:none;}
+  .trade-addr .addr-link:hover{color:var(--yc-link-hover);text-decoration:underline;}
+
+  .trade-data{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    background:var(--yc-bg-data);border-radius:4px;padding:8px 0;margin:0 0 10px;
+  }
+  .trade-data .cell{border-left:1px solid #f0f0f0;padding:0 10px 6px;min-width:0;}
+  .trade-data .cell:first-child{border-left:none;}
+  .cell-title{display:flex;align-items:center;gap:3px;font-size:12px;color:var(--yc-text);margin-bottom:2px;white-space:nowrap;}
+  .cell-title .info-ic{color:var(--yc-text-hint);flex:none;}
+  .cell-value{display:flex;align-items:baseline;gap:2px;flex-wrap:wrap;}
+  .cell-value .v{font-family:"Oswald",sans-serif;font-weight:400;font-size:20px;line-height:1;}
+  .cell-value .v.price{color:var(--yc-price);}
+  .cell-value .u{font-size:12px;color:var(--yc-text);}
+  .cell-note{font-size:12px;color:var(--yc-text);opacity:.85;margin-top:2px;}
+
+  .trade-extra{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 8px 10px;}
+  .extra-item{display:flex;align-items:center;gap:4px;font-size:12px;}
+  .extra-item .k{color:var(--yc-text);}
+  .extra-item .v{color:var(--yc-text);font-family:Arial,sans-serif;}
+
+  .trade-tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 8px 10px;}
+  .tag-chip{background:var(--yc-tag-bg);color:var(--yc-text);font-size:11px;padding:5px 6px;border-radius:6px;}
+
+  .trade-footer{display:flex;align-items:center;justify-content:space-between;padding:0 8px;flex-wrap:wrap;gap:8px;}
+  .trade-source{font-size:13px;color:var(--yc-text-hint);}
+  .trade-actions{display:flex;align-items:center;gap:14px;}
+  .trade-actions span{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--yc-link);}
+  .trade-actions svg{flex:none;}
+
+  /* ---------- Desktop table-row layout ---------- */
+  @media(min-width:1024px){
+    .trade-item{padding:20px 4px;}
+    .trade-main{display:grid;grid-template-columns:96px minmax(220px,1.5fr) repeat(7,minmax(70px,1fr));column-gap:16px;align-items:start;}
+    .trade-head{display:contents;}
+    .trade-date,.trade-type{display:block;padding-top:2px;}
+    .trade-head-cell{grid-column:1;grid-row:1;display:flex;flex-direction:column;gap:2px;}
+    .trade-presale{align-self:flex-start;margin-top:4px;width:fit-content;}
+    .trade-addr{grid-column:2;grid-row:1;padding:0;}
+    .trade-data{display:contents;background:none;padding:0;margin:0;}
+    .trade-data .cell{
+      border-left:1px solid #f0f0f0;padding-left:10px;background:none;grid-row:1;
+    }
+    .trade-data .cell:nth-child(1){grid-column:3;}
+    .trade-data .cell:nth-child(2){grid-column:4;}
+    .trade-data .cell:nth-child(3){grid-column:5;}
+    .trade-extra{display:contents;padding:0;}
+    .extra-item{flex-direction:column;align-items:flex-start;gap:2px;border-left:1px solid #f0f0f0;padding-left:10px;grid-row:1;}
+    .trade-extra .extra-item:nth-child(1){grid-column:6;}
+    .trade-extra .extra-item:nth-child(2){grid-column:7;}
+    .trade-extra .extra-item:nth-child(3){grid-column:8;}
+    .trade-extra .extra-item:nth-child(4){grid-column:9;}
+    .trade-tags{grid-column:1 / -1;grid-row:2;padding:10px 0 0;}
+    .trade-footer{grid-column:1 / -1;grid-row:3;padding:6px 0 0;}
+  }
+
+  /* dashed empty values */
+  .is-empty{color:var(--yc-text-hint) !important;}
+
+  /* ---------- pagination ---------- */
+  .pagination{display:flex;align-items:center;justify-content:center;gap:4px;padding:24px 8px 8px;flex-wrap:wrap;}
+  .pg-btn{
+    min-width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+    border:none;background:none;border-radius:6px;font-size:14px;color:var(--yc-text-secondary);
+    cursor:pointer;
+  }
+  .pg-btn.active{background:var(--yc-pagination-active);color:var(--yc-text-strong);font-weight:700;}
+  .pg-btn:hover:not(.active):not(:disabled){background:#f2f2f2;}
+  .pg-btn:disabled{opacity:.3;cursor:default;}
+  .pg-ellipsis{color:var(--yc-text-hint);padding:0 4px;}
+  .pg-arrow{display:flex;align-items:center;gap:4px;font-size:13px;color:var(--yc-text-secondary);}
+
+  /* ---------- bottom breadcrumb ---------- */
+  .breadcrumb-bottom{background:#fff;padding:16px;font-size:12px;color:var(--yc-text-hint);}
+  @media(min-width:1024px){ .breadcrumb-bottom{max-width:1200px;margin:0 auto;padding:16px;} }
+  .breadcrumb-bottom .line{display:flex;flex-wrap:wrap;align-items:center;gap:0;padding:6px 0;}
+  .breadcrumb-bottom a{color:var(--yc-link);}
+  .breadcrumb-bottom a:hover{text-decoration:underline;}
+  .breadcrumb-bottom .sep{margin:0 6px;color:#ccc;}
+
+  /* ================= FOOTER ================= */
+  .site-footer{background:#F0F0F0;padding:28px 16px 16px;}
+  .footer-wrap{max-width:1200px;margin:0 auto;}
+  .footer-top{display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center;}
+  .footer-cs-buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .footer-cs-buttons a{
+    background:var(--yc-primary);color:var(--yc-text);font-size:13px;font-weight:700;
+    padding:8px 16px;border-radius:4px;
+  }
+  .footer-cs-buttons a:hover{background:var(--yc-primary-dark);}
+  .footer-contact{display:flex;flex-direction:column;gap:14px;font-size:13px;color:var(--yc-text-secondary);}
+  .footer-contact h4{margin:0 0 6px;font-size:14px;color:var(--yc-text);}
+  .footer-contact p{margin:2px 0;}
+  .footer-hours{font-size:12px;color:var(--yc-text-hint);}
+  .footer-links{display:none;}
+  .footer-social{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:12px;color:var(--yc-text-secondary);margin-top:6px;}
+  .footer-social span{display:flex;align-items:center;gap:5px;}
+  .footer-legal{text-align:center;font-size:12px;color:var(--yc-text-hint);margin-top:18px;line-height:1.8;}
+  .footer-legal .policies{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
+  .footer-legal a{color:var(--yc-text-hint);}
+  .footer-legal a:hover{color:var(--yc-link);}
+
+  @media(min-width:1024px){
+    .footer-top{flex-direction:row;align-items:flex-start;text-align:left;justify-content:flex-start;gap:60px;}
+    .footer-brand{display:flex;flex-direction:column;gap:16px;min-width:240px;}
+    .footer-cs-buttons{justify-content:flex-start;}
+    .footer-links{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:20px 32px;flex:1;
+    }
+    .footer-links h5{margin:0 0 10px;font-size:13px;color:var(--yc-text-hint);}
+    .footer-links a{display:block;font-size:13px;color:var(--yc-text-secondary);padding:4px 0;}
+    .footer-links a:hover{color:var(--yc-link);}
+    .footer-social{justify-content:flex-start;margin-top:12px;}
+    .footer-bottom-nav{
+      display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding:18px 0;
+      border-top:1px solid var(--yc-border);margin-top:24px;font-size:13px;color:var(--yc-text-secondary);
+    }
+  }
+  .footer-bottom-nav{display:none;}
+  @media(min-width:1024px){ .footer-bottom-nav{display:flex;} }
+</style>
+</head>
+<body>
+
+<!-- ================= MOBILE HEADER ================= -->
+<header class="header-mobile">
+  <a class="yc-logo" href="#" aria-label="永慶房仲網">
+    <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="none" stroke="#D42F45" stroke-width="2"/><circle cx="13" cy="13" r="4.5" fill="#D42F45"/></svg>
+    <span style="font-weight:900;font-size:15px;color:var(--yc-text-strong);">永慶房仲網</span>
+  </a>
+  <span class="mid">社區</span>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="開啟選單">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</header>
+
+<div class="page-head-mobile">
+  <button class="icon-btn" aria-label="返回" onclick="history.back()">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="title-wrap">
+    <h1>西班牙水花園 成交行情</h1>
+    <span class="info-ic">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="5" r=".9" fill="currentColor"/><path d="M8 7.5v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+    </span>
+  </div>
+  <span class="icon-btn"></span>
+</div>
+
+<!-- mobile drawer menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__panel">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="關閉選單">&times;</button>
+    <nav style="clear:both;padding-top:36px;">
+      <a href="#">買屋</a><a href="#">快售</a><a href="#" style="color:var(--yc-text-strong);font-weight:700;">社區</a>
+      <a href="#">實價登錄3.0</a><a href="#">租屋</a><a href="#">永慶AI特助</a>
+      <a href="#">門市</a><a href="#">知識</a><a href="#">關於永慶</a><a href="#">業務新人</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ================= DESKTOP HEADER ================= -->
+<div class="header-desktop">
+  <div class="nav-toolbar">
+    <div class="w">
+      <span>永慶孫慶餘 帶領集團邁向下個35年</span>
+      <div class="right">
+        <a href="#">註冊｜登入</a>
+        <a href="#">i+智慧創新體驗館</a>
+        <a href="#">加盟永慶不動產</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-main">
+    <div class="w">
+      <a class="yc-logo" href="#" aria-label="永慶房仲網">
+        <svg width="34" height="34" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="none" stroke="#D42F45" stroke-width="2"/><circle cx="13" cy="13" r="4.5" fill="#D42F45"/></svg>
+        <span class="yc-logo-text">永慶房仲網</span>
+      </a>
+      <nav class="menu">
+        <a class="nav-link" href="#">買屋</a>
+        <a class="nav-link" href="#">快售</a>
+        <a class="nav-link active" href="#">社區</a>
+        <a class="nav-link" href="#">實價登錄3.0</a>
+        <a class="nav-link" href="#">租屋</a>
+        <a class="nav-link" href="#">永慶AI特助<span class="badge">NEW</span></a>
+        <a class="nav-link" href="#">門市</a>
+        <a class="nav-link" href="#">知識</a>
+        <a class="nav-link" href="#">關於永慶</a>
+        <a class="nav-link" href="#">業務新人</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- top breadcrumb (desktop) -->
+<div class="page-wrap">
+  <div class="breadcrumb-top">
+    <div class="crumbs">
+      <a href="#">首頁</a><span class="sep">&gt;</span>
+      <a href="#">社區</a><span class="sep">&gt;</span>
+      <a href="#">新北市</a><span class="sep">&gt;</span>
+      <a href="#">三重區</a><span class="sep">&gt;</span>
+      <a href="#">西班牙水花園</a><span class="sep">&gt;</span>
+      <span class="current">西班牙水花園社區實價登錄</span>
+    </div>
+    <button class="fav-btn" id="favBtn">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13.5s-5.5-3.3-5.5-7.2A3.15 3.15 0 0 1 8 4.4a3.15 3.15 0 0 1 5.5 1.9c0 3.9-5.5 7.2-5.5 7.2z" stroke="currentColor" stroke-width="1.3"/></svg>
+      <span>收藏</span>
+    </button>
+  </div>
+
+  <!-- tab strip (desktop) -->
+  <div class="tab-strip">
+    <span class="tab prev">
+      <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M12.5 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      社區介紹
+    </span>
+    <span class="tab active">
+      西班牙水花園 成交行情
+      <span class="info-ic">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="5" r=".9" fill="currentColor"/><path d="M8 7.5v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </span>
+    </span>
+    <span class="tab">預售物件</span>
+  </div>
+
+  <!-- ================= CONTENT ================= -->
+  <div class="content-body">
+    <div class="registry container-pad">
+
+      <div class="filter-row">
+        <div style="position:relative;flex:1;">
+          <button class="filter-btn" id="filterBtn1" data-target="dd1">
+            <span id="filterLabel1">本社區</span>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="filter-dropdown" id="dd1">
+            <li class="selected" data-label="本社區">本社區</li>
+            <li data-label="同路段">同路段</li>
+            <li data-label="同區域">同區域</li>
+          </ul>
+        </div>
+        <div style="position:relative;flex:1;">
+          <button class="filter-btn" id="filterBtn2" data-target="dd2">
+            <span id="filterLabel2">近五年</span>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="filter-dropdown" id="dd2">
+            <li data-label="近一年">近一年</li>
+            <li data-label="近三年">近三年</li>
+            <li class="selected" data-label="近五年">近五年</li>
+            <li data-label="全部年度">全部年度</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="summary-row">
+        <span class="count"><b id="countNum">63</b>筆，本社區實登物件</span>
+        <div class="action-btns">
+          <button class="track-btn" id="trackBtn">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" id="trackIcon"><path d="M8 1.6c-2 0-3.4 1.6-3.4 3.7 0 2.7-1.1 3.5-1.6 4.3-.3.4 0 1 .5 1h9c.5 0 .8-.6.5-1-.5-.8-1.6-1.6-1.6-4.3 0-2.1-1.4-3.7-3.4-3.7z" stroke="currentColor" stroke-width="1.2"/><path d="M6.4 13a1.6 1.6 0 0 0 3.2 0" stroke="currentColor" stroke-width="1.2"/></svg>
+            <span id="trackLabel">追蹤行情</span>
+          </button>
+          <div style="position:relative;">
+            <button class="sort-btn" id="sortBtn">
+              排序
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 3v10M4 13l-2.3-2.3M4 13l2.3-2.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 13V3M12 3l2.3 2.3M12 3 9.7 5.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sort-panel" id="sortPanel">
+              <div class="row">
+                <span class="label">日期</span>
+                <div class="opts">
+                  <button class="sort-opt active" data-key="date" data-dir="desc">新→舊</button>
+                  <button class="sort-opt" data-key="date" data-dir="asc">舊→新</button>
+                </div>
+              </div>
+              <div class="row">
+                <span class="label">總價</span>
+                <div class="opts">
+                  <button class="sort-opt" data-key="total" data-dir="asc">低→高</button>
+                  <button class="sort-opt" data-key="total" data-dir="desc">高→低</button>
+                </div>
+              </div>
+              <div class="row">
+                <span class="label">單價</span>
+                <div class="opts">
+                  <button class="sort-opt" data-key="unit" data-dir="asc">低→高</button>
+                  <button class="sort-opt" data-key="unit" data-dir="desc">高→低</button>
+                </div>
+              </div>
+              <div class="row">
+                <span class="label">坪數</span>
+                <div class="opts">
+                  <button class="sort-opt" data-key="ping" data-dir="asc">小→大</button>
+                  <button class="sort-opt" data-key="ping" data-dir="desc">大→小</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trade-list" id="tradeList"></div>
+
+      <nav class="pagination" id="pagination"></nav>
+    </div>
+  </div>
+</div>
+
+<!-- ================= BOTTOM BREADCRUMB ================= -->
+<div class="breadcrumb-bottom">
+  <div class="line">
+    <a href="#">首頁</a><span class="sep">&gt;</span>
+    <a href="#">社區</a><span class="sep">&gt;</span>
+    <a href="#">新北市</a><span class="sep">&gt;</span>
+    <a href="#">三重區</a><span class="sep">&gt;</span>
+    <a href="#">西班牙水花園</a><span class="sep">&gt;</span>
+    <a href="#">西班牙水花園實價登錄</a>
+  </div>
+  <div class="line">
+    <a href="#">實價登錄</a><span class="sep">&gt;</span>
+    <a href="#">新北市</a><span class="sep">&gt;</span>
+    <a href="#">三重區</a><span class="sep">&gt;</span>
+    <a href="#">中正北路</a>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="yc-logo" href="#" aria-label="永慶房產集團">
+          <svg width="30" height="30" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="none" stroke="#D42F45" stroke-width="2"/><circle cx="13" cy="13" r="4.5" fill="#D42F45"/></svg>
+          <span class="yc-logo-text">永慶房產集團</span>
+        </a>
+        <div class="footer-cs-buttons">
+          <a href="#">智能客服</a><a href="#">客服信箱</a><a href="#">客戶流程</a>
+        </div>
+        <div class="footer-contact">
+          <div>
+            <h4>永慶房屋-直營店 (雙北直營區)</h4>
+            <p>📞 0800-661111</p>
+            <p>✉️ CS@evertrust.com.tw</p>
+          </div>
+          <div>
+            <h4>永慶不動產-加盟店 (非直營區)</h4>
+            <p>📞 0800-306888</p>
+            <p>✉️ realestate@evertrust.com.tw</p>
+          </div>
+          <p class="footer-hours">服務時間：週一至週五 9:00－18:00</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h5>關於永慶</h5>
+          <a href="#">經營理念</a><a href="#">永慶房屋</a><a href="#">獲獎事記</a>
+          <a href="#">企業社會責任</a><a href="#">加盟品牌</a><a href="#">永慶故事</a>
+        </div>
+        <div>
+          <h5>永慶集團</h5>
+          <a href="#">永慶房屋</a><a href="#">永慶不動產</a><a href="#">永義房屋</a>
+          <a href="#">有巢氏房屋</a><a href="#">台慶不動產</a><a href="#">永慶代銷</a>
+        </div>
+        <div>
+          <h5>永慶服務</h5>
+          <a href="#">i智慧創新體驗館</a><a href="#">永慶慈善基金會</a><a href="#">永慶居家服務</a><a href="#">友善服務</a>
+        </div>
+        <div>
+          <h5>人才招募</h5>
+          <a href="#">經紀人招募</a><a href="#">數位人才招募</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-social">
+      <span>💬 加好友</span><span>👍 加粉絲</span><span>📷 追蹤</span><span>▶️ 訂閱</span>
+    </div>
+
+    <div class="footer-bottom-nav">
+      <span>買屋</span><span>億級住宅</span><span>快售</span><span>社區</span>
+      <span>實價登錄3.0</span><span>租屋</span><span>門市</span><span>知識</span><span>業務新人</span>
+    </div>
+
+    <div class="footer-legal">
+      <p>永慶房屋仲介股份有限公司負責建置及維護　非經正式書面同意，禁止轉貼節錄</p>
+      <div class="policies">
+        <a href="#">智慧財產權聲明</a><a href="#">隱私權聲明</a><a href="#">服務聲明</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---------- data ----------
+  var DATA = [
+    { date:"113年05月", dateSort:1130500, type:"華廈", presale:true, addr:"台北市敦化南路二段77號", link:"鄉林大境",
+      unit:70.2, unitTxt:"70.2", total:4250, totalTxt:"4,250", ping:60.56, pingTxt:"60.56",
+      land:"20.46坪", layout:"2房(室)4廳3衛", age:"11.9年", floor:"2/5樓",
+      tags:["廁所有窗","房間都有窗","有天然瓦斯"], source:"永慶房屋", photo:true, transfer:101 },
+    { date:"113年05月", dateSort:1130500, type:"車位", presale:false, addr:"台北市敦化南路二段77號", link:"鄉林大境",
+      unit:0, unitTxt:"0", total:275, totalTxt:"275", ping:11.69, pingTxt:"11.69",
+      land:"0.34坪", layout:"0房(室)0廳0衛", age:"0年", floor:"0樓",
+      tags:["廁所有窗","房間都有窗","有天然瓦斯"], source:"永慶房屋", photo:false, transfer:101 },
+    { date:"111年10月", dateSort:1111000, type:"土地", presale:true, addr:"台北市敦化南路二段77號", link:null,
+      unit:9.8, unitTxt:"9.8", total:10811, totalTxt:"10,811", ping:0, pingTxt:"0",
+      land:"1101.75坪", layout:"0房(室)0廳0衛", age:"0年", floor:"",
+      tags:[], source:"永慶房屋", photo:false, transfer:0 },
+    { date:"111年01月", dateSort:1110100, type:"電梯大樓", presale:true, addr:"台北市中山區敬業一路128巷41號4樓之1", link:"中鼎大樓",
+      unit:104.8, unitTxt:"104.8", total:319999, totalTxt:"319,999", ping:3052.63, pingTxt:"3052.63",
+      land:"202.65坪", layout:"0房(室)0廳0衛", age:"35.3年", floor:"19/24樓",
+      tags:["廁所有窗","房間都有窗","有天然瓦斯"], source:"永慶房屋", photo:true, transfer:0 },
+    { date:"100年03月", dateSort:1000300, type:"大樓", presale:true,
+      addr:"台北市中山區新生北路二段60之1號,60之2號,60之3號,60之5號,60之6號,60之7號,新生北路二段60巷1號,3號,5號,7號,9號,11號,13號,15號,17號,19號,21號,23號,25號,27號,29號建物門牌地下二層至地下三層",
+      link:"大直美堤花園(基河國宅二期)",
+      unit:1234.5, unitTxt:"1,234.5", total:1234567, totalTxt:"1,234,567", ping:12345.67, pingTxt:"12345.67",
+      land:"1234.67坪", layout:"123房(室)4廳3衛", age:"23.4年", floor:"B1~B1/30樓",
+      tags:["廁所有窗","房間都有窗","有天然瓦斯"], source:"內政部實價登錄", photo:true, transfer:101 },
+    { date:"109年12月", dateSort:1091200, type:"透天厝", presale:false, addr:"澎湖縣湖西鄉41號", link:"泰然御勝",
+      unit:null, unitTxt:"--", total:null, totalTxt:"--", ping:null, pingTxt:"--",
+      land:"--", layout:"--", age:"--", floor:"--",
+      tags:[], source:"內政部實價登錄", photo:false, transfer:0 }
+  ];
+
+  var currentSort = {key:"date", dir:"desc"};
+
+  function infoIcon(){
+    return '<svg class="info-ic" width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="5" r=".9" fill="currentColor"/><path d="M8 7.5v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>';
+  }
+  function linkIcon(){
+    return '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6.5 9.5l3-3M7 5.5l.6-.6a2.3 2.3 0 0 1 3.3 3.3l-.7.7M9 10.5l-.6.6a2.3 2.3 0 0 1-3.3-3.3l.7-.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>';
+  }
+  function camIcon(){
+    return '<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="4.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="9" r="2.6" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 4.5l1-2h3l1 2" stroke="currentColor" stroke-width="1.2"/></svg>';
+  }
+  function transferIcon(){
+    return '<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 0 1 10.2-4.2M14 8a6 6 0 0 1-10.2 4.2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M11.5 2.5v2.5H9M4.5 13.5V11H7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+
+  function cell(title, value, unit, note, isPrice){
+    var emptyCls = value === "--" ? " is-empty" : "";
+    return '<div class="cell">' +
+      '<div class="cell-title">' + title + (isPrice ? infoIcon() : '') + '</div>' +
+      '<div class="cell-value"><span class="v' + (isPrice?' price':'') + emptyCls + '">' + value + '</span>' + (unit && value!=="--" ? '<span class="u">' + unit + '</span>' : '') + '</div>' +
+      (note ? '<div class="cell-note">' + note + '</div>' : '') +
+    '</div>';
+  }
+
+  function extraCell(k, v){
+    var emptyCls = (v === "--" || v === "") ? " is-empty" : "";
+    return '<div class="extra-item"><span class="k">' + k + '</span><span class="v' + emptyCls + '">' + (v || "--") + '</span></div>';
+  }
+
+  function renderItem(d){
+    var tagsHtml = d.tags.map(function(t){ return '<span class="tag-chip">' + t + '</span>'; }).join('');
+    var linkHtml = d.link
+      ? '<a class="addr-link" href="#">' + linkIcon() + d.link + '</a>'
+      : '';
+    var actionsHtml = '';
+    if (d.photo) actionsHtml += '<span>' + camIcon() + '照片</span>';
+    if (d.transfer) actionsHtml += '<span>' + transferIcon() + '移轉' + d.transfer + '次</span>';
+
+    return '<article class="trade-item">' +
+      '<div class="trade-main">' +
+        '<div class="trade-head">' +
+          '<div class="trade-head-cell">' +
+            '<span class="trade-date num">' + d.date + '</span>' +
+            '<span class="trade-type">' + d.type + '</span>' +
+            (d.presale ? '<span class="trade-presale">預售屋</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="trade-addr">' +
+          '<p class="addr-text">' + d.addr + '</p>' +
+          linkHtml +
+        '</div>' +
+        '<div class="trade-data">' +
+          cell('建坪單價', d.unitTxt, '萬/坪', d.unitTxt!=='--' ? '含車位計算' : '', true) +
+          cell('總價', d.totalTxt, '萬', d.totalTxt!=='--' ? '含車位價' : '', true) +
+          cell('建坪', d.pingTxt, '坪', '', false) +
+        '</div>' +
+        '<div class="trade-extra">' +
+          extraCell('地坪', d.land) +
+          extraCell('格局', d.layout) +
+          extraCell('屋齡', d.age) +
+          extraCell('樓層', d.floor) +
+        '</div>' +
+        (tagsHtml ? '<div class="trade-tags">' + tagsHtml + '</div>' : '<div class="trade-tags"></div>') +
+        '<div class="trade-footer">' +
+          '<span class="trade-source">來源：' + d.source + '</span>' +
+          '<div class="trade-actions">' + actionsHtml + '</div>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  }
+
+  function sortData(){
+    var arr = DATA.slice();
+    var key = currentSort.key, dir = currentSort.dir;
+    var map = { date:"dateSort", total:"total", unit:"unit", ping:"ping" };
+    var field = map[key];
+    arr.sort(function(a,b){
+      var av = a[field], bv = b[field];
+      if (av === null) av = -Infinity;
+      if (bv === null) bv = -Infinity;
+      return dir === "asc" ? av - bv : bv - av;
+    });
+    return arr;
+  }
+
+  function render(){
+    var list = document.getElementById('tradeList');
+    list.innerHTML = sortData().map(renderItem).join('');
+  }
+
+  render();
+
+  // ---------- sort panel ----------
+  var sortBtn = document.getElementById('sortBtn');
+  var sortPanel = document.getElementById('sortPanel');
+  sortBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    sortPanel.classList.toggle('open');
+  });
+  sortPanel.querySelectorAll('.sort-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      sortPanel.querySelectorAll('.sort-opt').forEach(function(b){ b.classList.remove('active'); });
+      // keep only one active across whole panel + toggle its sibling group visual
+      btn.classList.add('active');
+      currentSort = { key: btn.getAttribute('data-key'), dir: btn.getAttribute('data-dir') };
+      render();
+      sortPanel.classList.remove('open');
+    });
+  });
+
+  // ---------- track btn ----------
+  var trackBtn = document.getElementById('trackBtn');
+  trackBtn.addEventListener('click', function(){
+    trackBtn.classList.toggle('active');
+    document.getElementById('trackLabel').textContent = trackBtn.classList.contains('active') ? '已追蹤' : '追蹤行情';
+  });
+
+  // ---------- fav btn (desktop) ----------
+  var favBtn = document.getElementById('favBtn');
+  if (favBtn){
+    favBtn.addEventListener('click', function(){
+      favBtn.style.color = favBtn.style.color === 'rgb(212, 47, 69)' ? '' : '#D42F45';
+    });
+  }
+
+  // ---------- filter dropdowns ----------
+  function setupFilter(btnId, ddId, labelId){
+    var btn = document.getElementById(btnId);
+    var dd = document.getElementById(ddId);
+    var label = document.getElementById(labelId);
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.filter-dropdown.open').forEach(function(el){ if(el!==dd) el.classList.remove('open'); });
+      dd.classList.toggle('open');
+      btn.classList.toggle('open');
+    });
+    dd.querySelectorAll('li').forEach(function(li){
+      li.addEventListener('click', function(){
+        dd.querySelectorAll('li').forEach(function(l){ l.classList.remove('selected'); });
+        li.classList.add('selected');
+        label.textContent = li.getAttribute('data-label');
+        dd.classList.remove('open');
+        btn.classList.remove('open');
+      });
+    });
+  }
+  setupFilter('filterBtn1','dd1','filterLabel1');
+  setupFilter('filterBtn2','dd2','filterLabel2');
+
+  document.addEventListener('click', function(){
+    sortPanel.classList.remove('open');
+    document.querySelectorAll('.filter-dropdown.open').forEach(function(el){ el.classList.remove('open'); });
+    document.querySelectorAll('.filter-btn.open').forEach(function(el){ el.classList.remove('open'); });
+  });
+
+  // ---------- pagination ----------
+  var TOTAL_PAGES = 100;
+  var currentPage = 2;
+  function renderPagination(){
+    var wrap = document.getElementById('pagination');
+    var pages = [1,2,3,4,5];
+    var html = '';
+    html += '<button class="pg-btn pg-arrow" ' + (currentPage===1?'disabled':'') + ' data-page="prev">' +
+      '<svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M12.5 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 上一頁</button>';
+    pages.forEach(function(p){
+      html += '<button class="pg-btn' + (p===currentPage?' active':'') + '" data-page="' + p + '">' + p + '</button>';
+    });
+    html += '<span class="pg-ellipsis">…</span>';
+    html += '<button class="pg-btn' + (currentPage===TOTAL_PAGES?' active':'') + '" data-page="' + TOTAL_PAGES + '">' + TOTAL_PAGES + '</button>';
+    html += '<button class="pg-btn pg-arrow" data-page="next">下一頁 ' +
+      '<svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M7.5 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
+    wrap.innerHTML = html;
+    wrap.querySelectorAll('.pg-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var p = btn.getAttribute('data-page');
+        if (p === 'prev') currentPage = Math.max(1, currentPage-1);
+        else if (p === 'next') currentPage = Math.min(TOTAL_PAGES, currentPage+1);
+        else currentPage = parseInt(p, 10);
+        renderPagination();
+        document.querySelector('.registry').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  }
+  renderPagination();
+
+  // ---------- mobile drawer ----------
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileMenuClose = document.getElementById('mobileMenuClose');
+  hamburgerBtn.addEventListener('click', function(){ mobileMenu.classList.add('open'); });
+  mobileMenuClose.addEventListener('click', function(){ mobileMenu.classList.remove('open'); });
+  mobileMenu.addEventListener('click', function(e){ if(e.target === mobileMenu) mobileMenu.classList.remove('open'); });
+
+  // show desktop header block only once JS confirms layout (avoids FOUC not needed, css media handles it)
+  document.querySelector('.header-desktop').style.display = '';
+})();
+</script>
+
+<style>
+  @media(min-width:1024px){
+    .header-desktop{display:block !important;}
+    .header-mobile,.page-head-mobile{display:none !important;}
+  }
+</style>
+</body>
+</html>
