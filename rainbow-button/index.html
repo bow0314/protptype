@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rainbow Button Animation</title>
+<style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(16, 18, 24);
+  gap: 5rem;
+  padding: 3rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.load {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  pointer-events: none;
+  --skew: -10deg;
+  --linear-aura-gradient: linear-gradient(
+    to right in oklch,
+    #f63b35 0%,
+    #f63b35 3%,
+    #1265f0 7%,
+    #477dff 17%,
+    #2caf4f 20%,
+    #72bb44 25%,
+    #ffe523 27%,
+    #ffcc25 30%,
+    #ea4335 33%,
+    #ea4335 45%,
+    #1265f0 49%,
+    #477dff 68%,
+    #34a853 72%,
+    #2caf4f 79%,
+    #ffe523 82%,
+    #ffcc25 87%,
+    #f63b35 90%,
+    #f63b35 100%
+  );
+  --gradient-fade-margin: 1rem;
+  --gradient-fade-distance: 10rem;
+  mask-image: linear-gradient(
+    45deg,
+    transparent,
+    transparent var(--gradient-fade-margin),
+    black var(--gradient-fade-distance),
+    black calc(100% - var(--gradient-fade-distance)),
+    transparent calc(100% - var(--gradient-fade-margin)),
+    transparent 100%
+  );
+}
+
+.load::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--linear-aura-gradient);
+  background-size: 50%, 100%;
+  transform-origin: top left;
+  transform: scale(16, 1);
+  animation: gradient-slide 8s linear infinite;
+}
+
+.load-glow {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  opacity: 0.25;
+  overflow: hidden;
+  pointer-events: none;
+  --skew: -10deg;
+  --linear-aura-gradient: linear-gradient(
+    to right in oklch,
+    #f63b35 0%,
+    #f63b35 3%,
+    #1265f0 7%,
+    #477dff 17%,
+    #2caf4f 20%,
+    #72bb44 25%,
+    #ffe523 27%,
+    #ffcc25 30%,
+    #ea4335 33%,
+    #ea4335 45%,
+    #1265f0 49%,
+    #477dff 68%,
+    #34a853 72%,
+    #2caf4f 79%,
+    #ffe523 82%,
+    #ffcc25 87%,
+    #f63b35 90%,
+    #f63b35 100%
+  );
+}
+
+.load-glow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--linear-aura-gradient);
+  background-size: 50%, 100%;
+  transform-origin: top left;
+  transform: scale(16, 1);
+  animation: gradient-slide 8s linear infinite;
+}
+
+.load-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background: rgb(16, 18, 24);
+  --shadow-inset: 5rem;
+  mask-image: radial-gradient(ellipse at top center, transparent 0, black 100%),
+    linear-gradient(
+      to right,
+      black 0,
+      transparent var(--shadow-inset),
+      transparent calc(100% - var(--shadow-inset)),
+      black 100%
+    ),
+    linear-gradient(to bottom, transparent, black);
+}
+
+@keyframes gradient-slide {
+  0% {
+    transform: skew(var(--skew)) scale(16, 1) translate(-50%, 0);
+  }
+  100% {
+    transform: skew(var(--skew)) scale(16, 1) translate(0, 0);
+  }
+}
+
+.wrapper-1,
+.wrapper-2 {
+  position: relative;
+  width: 35rem;
+  height: 10rem;
+  background-color: rgb(29, 30, 38);
+  border-radius: 1.5rem;
+  contain: paint;
+}
+
+.wrapper-1 .layer-1 {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  contain: paint;
+}
+
+.wrapper-1 .layer-1::before {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  background: conic-gradient(
+      rgba(52, 168, 82, 0) 0deg,
+      rgba(52, 168, 82, 1) 38.9738deg,
+      rgba(255, 211, 20, 1) 62.3678deg,
+      rgba(255, 70, 65, 1) 87.0062deg,
+      rgba(49, 134, 255, 1) 107.428deg,
+      rgba(49, 134, 255, 0.5) 204.48deg,
+      rgba(49, 134, 255, 0) 308.88deg,
+      rgba(52, 168, 82, 0) 360deg
+    )
+    border-box;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 125%;
+  aspect-ratio: 1 / 1;
+  scale: 1 0.4;
+  pointer-events: none;
+  filter: blur(20px);
+  animation: ambient-spin 7s linear infinite;
+  contain: paint;
+  transition: opacity 0.3s;
+}
+
+@keyframes ambient-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.wrapper-1 .layer-2 {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  contain: paint;
+  transition: border-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wrapper-1 .layer-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  filter: blur(25px);
+  background-color: rgb(29, 30, 38);
+  contain: paint;
+  transition: filter 0.3s;
+}
+
+.wrapper-2 {
+  contain: none;
+}
+
+.wrapper-2 .layer-1 {
+  filter: blur(10px);
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  contain: paint;
+}
+
+.wrapper-2 .layer-1::before,
+.wrapper-2 .layer-2::before {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  background: conic-gradient(
+      rgba(52, 168, 82, 0) 0deg,
+      rgba(52, 168, 82, 1) 38.9738deg,
+      rgba(255, 211, 20, 1) 62.3678deg,
+      rgba(255, 70, 65, 1) 87.0062deg,
+      rgba(49, 134, 255, 1) 107.428deg,
+      rgba(49, 134, 255, 0.5) 204.48deg,
+      rgba(49, 134, 255, 0) 308.88deg,
+      rgba(52, 168, 82, 0) 360deg
+    )
+    border-box;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 125%;
+  aspect-ratio: 1 / 1;
+  scale: 1 0.4;
+  pointer-events: none;
+  filter: blur(20px);
+  animation: ambient-spin 7s linear infinite;
+  contain: paint;
+  transition: opacity 0.3s;
+}
+
+.wrapper-2 .layer-2 {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  contain: paint;
+  background-color: rgb(29, 30, 38);
+}
+
+.wrapper-2 .layer-3 {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  contain: paint;
+  transition: border-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wrapper-2 .layer-3::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: calc(1.5rem - 2px);
+  background-color: rgb(29, 30, 38);
+  contain: paint;
+  transition: filter 0.3s;
+  animation: plate-background-blur-on-expand 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes plate-background-blur-on-expand {
+  0% {
+    filter: blur(0);
+  }
+  11% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
+</style>
+</head>
+<body>
+<div class="load"></div>
+<div class="load-glow"></div>
+
+<div class="wrapper-1">
+  <div class="layer-1"></div>
+  <div class="layer-2"></div>
+</div>
+
+<div class="wrapper-2">
+  <div class="layer-1"></div>
+  <div class="layer-2"></div>
+  <div class="layer-3"></div>
+</div>
+</body>
+</html>
