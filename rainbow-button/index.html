@@ -11,7 +11,7 @@
   color-scheme: dark;
 }
 
-:root[data-theme="light"] {
+:root:has(#theme-toggle:checked) {
   --bg: #f2f3f6;
   --card-bg: #ffffff;
   color-scheme: light;
@@ -434,29 +434,5 @@ body {
   <div class="layer-3"></div>
   <div class="rainbow-line"></div>
 </div>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var toggle = document.getElementById('theme-toggle');
-  var saved = null;
-  try {
-    saved = localStorage.getItem('theme');
-  } catch (e) {}
-
-  if (saved === 'light') {
-    root.setAttribute('data-theme', 'light');
-    toggle.checked = true;
-  }
-
-  toggle.addEventListener('change', function () {
-    var theme = toggle.checked ? 'light' : 'dark';
-    root.setAttribute('data-theme', theme);
-    try {
-      localStorage.setItem('theme', theme);
-    } catch (e) {}
-  });
-})();
-</script>
 </body>
 </html>
