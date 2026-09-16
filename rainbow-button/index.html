@@ -296,6 +296,30 @@ body {
   contain: paint;
   transition: filter 0.3s;
 }
+
+.wrapper-2 .rainbow-line {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: conic-gradient(
+      rgba(52, 168, 82, 0) 0deg,
+      rgba(52, 168, 82, 1) 38.9738deg,
+      rgba(255, 211, 20, 1) 62.3678deg,
+      rgba(255, 70, 65, 1) 87.0062deg,
+      rgba(49, 134, 255, 1) 107.428deg,
+      rgba(49, 134, 255, 0.5) 204.48deg,
+      rgba(49, 134, 255, 0) 308.88deg,
+      rgba(52, 168, 82, 0) 360deg
+    )
+    border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
 </style>
 </head>
 <body>
@@ -311,6 +335,7 @@ body {
   <div class="layer-1"></div>
   <div class="layer-2"></div>
   <div class="layer-3"></div>
+  <div class="rainbow-line"></div>
 </div>
 </body>
 </html>
