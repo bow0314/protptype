@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Rainbow Button Animation</title>
 <style>
+:root {
+  --bg: rgb(16, 18, 24);
+  --card-bg: rgb(29, 30, 38);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f2f3f6;
+  --card-bg: #ffffff;
+  color-scheme: light;
+}
+
 html,
 body {
   width: 100%;
@@ -15,11 +27,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(16, 18, 24);
+  background-color: var(--bg);
   gap: 5rem;
   padding: 3rem 2rem 2rem 2rem;
   box-sizing: border-box;
   margin: 0;
+  transition: background-color 0.3s ease;
 }
 
 .load {
@@ -132,7 +145,7 @@ body {
   top: 0;
   left: 0;
   inset: 0;
-  background: rgb(16, 18, 24);
+  background: var(--bg);
   --shadow-inset: 5rem;
   mask-image: radial-gradient(ellipse at top center, transparent 0, black 100%),
     linear-gradient(
@@ -159,9 +172,10 @@ body {
   position: relative;
   width: 35rem;
   height: 10rem;
-  background-color: rgb(29, 30, 38);
+  background-color: var(--card-bg);
   border-radius: 1.5rem;
   contain: paint;
+  transition: background-color 0.3s ease;
 }
 
 .wrapper-1 .layer-1 {
@@ -223,9 +237,9 @@ body {
   inset: 0;
   border-radius: inherit;
   filter: blur(25px);
-  background-color: rgb(29, 30, 38);
+  background-color: var(--card-bg);
   contain: paint;
-  transition: filter 0.3s;
+  transition: filter 0.3s, background-color 0.3s ease;
 }
 
 .wrapper-2 {
@@ -275,7 +289,8 @@ body {
   inset: 0;
   border-radius: inherit;
   contain: paint;
-  background-color: rgb(29, 30, 38);
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
 }
 
 .wrapper-2 .layer-3 {
@@ -292,9 +307,9 @@ body {
   position: absolute;
   inset: 0;
   border-radius: calc(1.5rem - 2px);
-  background-color: rgb(29, 30, 38);
+  background-color: var(--card-bg);
   contain: paint;
-  transition: filter 0.3s;
+  transition: filter 0.3s, background-color 0.3s ease;
 }
 
 .wrapper-2 .rainbow-line {
@@ -320,9 +335,88 @@ body {
   mask-composite: exclude;
   pointer-events: none;
 }
+
+.theme-switch {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch .track {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 3.75rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background-color: var(--card-bg);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-switch .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  line-height: 1;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.theme-switch .icon.sun {
+  left: 0.4rem;
+}
+
+.theme-switch .icon.moon {
+  right: 0.4rem;
+}
+
+.theme-switch .thumb {
+  position: absolute;
+  top: 0.15rem;
+  left: 0.15rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch input:checked ~ .track .thumb {
+  left: calc(100% - 1.7rem - 0.15rem);
+}
+
+.theme-switch input:checked ~ .track .icon.sun {
+  opacity: 0.2;
+}
+
+.theme-switch input:not(:checked) ~ .track .icon.moon {
+  opacity: 0.2;
+}
 </style>
 </head>
 <body>
+<label class="theme-switch" aria-label="切換明暗模式">
+  <input type="checkbox" id="theme-toggle" />
+  <span class="track">
+    <span class="icon sun">&#9728;</span>
+    <span class="icon moon">&#9790;</span>
+    <span class="thumb"></span>
+  </span>
+</label>
+
 <div class="load"></div>
 <div class="load-glow"></div>
 
@@ -337,5 +431,29 @@ body {
   <div class="layer-3"></div>
   <div class="rainbow-line"></div>
 </div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  var saved = null;
+  try {
+    saved = localStorage.getItem('theme');
+  } catch (e) {}
+
+  if (saved === 'light') {
+    root.setAttribute('data-theme', 'light');
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener('change', function () {
+    var theme = toggle.checked ? 'light' : 'dark';
+    root.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch (e) {}
+  });
+})();
+</script>
 </body>
 </html>
