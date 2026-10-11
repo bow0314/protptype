@@ -1,0 +1,46 @@
+name: 產生短網址
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "**/*.html"
+      - ".github/scripts/shorten_links.py"
+      - ".github/workflows/short-links.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: short-links
+  cancel-in-progress: false
+
+jobs:
+  shorten:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 轉短網址
+        env:
+          REURL_API_KEY: ${{ secrets.REURL_API_KEY }}
+          PAGES_BASE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          SHORTEN_GLOBS: "**/*.html"
+        run: python .github/scripts/shorten_links.py
+      - name: 有新短網址就 commit 回 main
+        if: success() || failure()
+        run: |
+          git config core.quotepath false
+          if git diff --quiet -- short-links.json; then
+            echo "沒有新的短網址"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add short-links.json
+          git commit -m "更新短網址"
+          git pull --rebase origin master
+          git push origin HEAD:master
